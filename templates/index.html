@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Minecraft Dashboard</title>
+<link href="../static/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.css" rel="stylesheet" type="text/css">
+<link href="../static/dashboard.css" rel="stylesheet" type="text/css">
+</head>
+
+<body style="background-color:lightgray;">
+<header>
+  <div class="wrap navbar navbar-expand topbar static-top shadow bg-primary mb-5">
+    <h1 style="text-align:center; color:white;">Vanilla Server - IP: 127.0.0.1:25565</h1>
+  </div>
+</header>
+<div class="row justify-content-center">
+  <div class="col-2">
+    <div class="mb-5 card shadow">
+      <table class="card-body">
+        <tr>
+          <th>Player Roster</th>
+        </tr>
+        {% for item in roster %}
+        <tr>
+          <td style="color: {{ item[0] }}">{{ item[1] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="card shadow mb-5">
+      <div class="card-body">
+        <h3>Total Deaths: {{total_deaths}}</h3>
+        <h3>Total Player Kills: {{total_player_kills}}</h3>
+        <h3>Total Mob Kills: {{total_mob_kills}}</h3>
+        <h3>Total Distance Walked: {{total_distance_walked}}</h3>
+        <h3>Total Distance Ran: {{total_distance_ran}}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card shadow mb-5">
+      <div class="card-body justify-content-center">
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Deaths</th>
+            <th>Player Kills</th>
+            <th>Mob Kills</th>
+            <th>Distance Walked</th>
+            <th>Distance Ran</th>
+          </tr>
+          {% for item in stats %}
+          <tr>
+            <td>{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
+            <td>{{ item[2] }}</td>
+            <td>{{ item[3] }}</td>
+            <td>{{ item[4] }}</td>
+            <td>{{ item[5] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
