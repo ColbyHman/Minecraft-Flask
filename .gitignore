@@ -1,0 +1,10 @@
+*.json
+*.jar
+crash-reports/
+logs/
+*.DS*
+*.log
+world/
+*.venv
+__pycache__/
+.vagrant/
