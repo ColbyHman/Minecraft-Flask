@@ -1,0 +1,13 @@
+[Unit]
+Description=Flask Server
+Requires=network.target
+
+[Service]
+User=vagrant
+Group=vagrant
+ExecStart=/app/flask.sh
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
